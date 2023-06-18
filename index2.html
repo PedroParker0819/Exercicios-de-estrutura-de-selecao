@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Classificador de animais</title>
+</head>
+<body>
+  <h1>Classificador de animais</h1>
+  <p>Esta página classifica os animais de acordo com o tipo de alimento que comem.</p>
+  <form action="index.php" method="post">
+    <label for="animal">Animal:</label>
+    <input type="text" name="animal" id="animal">
+    <input type="submit" value="Classify">
+  </form>
+  <?php
+    if (isset($_POST['animal'])) {
+      $animal = $_POST['animal'];
+      if ($animal == "lion" || $animal == "tiger" || $animal == "shark" || $animal == "jaguar") {
+        echo "<p>O animal é carnívoro.</p>";
+      } else if ($animal == "pig" || $animal == "maned wolf" || $animal == "tortoise") {
+        echo "<p>O animal é onívoro.</p>";
+      } else if ($animal == "zebra" || $animal == "elephant" || $animal == "ox" || $animal == "giraffe") {
+        echo "<p>O animal é um herbívoro.</p>";
+      } else {
+        echo "<p>O animal não está na lista.</p>";
+      }
+    }
+  ?>
+</body>
+</html>
